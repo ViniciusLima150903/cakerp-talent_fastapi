@@ -6,11 +6,12 @@ from sqlalchemy.orm import sessionmaker
 
 load_dotenv()
 
-SQLALCHEMY_DATABASE_URL= os.getenv("SQLALCHEMY_DATABE_URL")
+SQLALCHEMY_DATABASE_URL= "sqllite:///./sql_app.db"
 
 
 
 engine=create_engine(SQLALCHEMY_DATABASE_URL)
+
 SessionLocal=sessionmaker(autocommit=False,autoflush=False,bind=engine)
 
 Base=declarative_base()
